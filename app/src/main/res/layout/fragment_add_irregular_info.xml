@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    tools:context=".DisplayVerbInfo">
+
+    <EditText
+        android:id="@+id/selectedVerb_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1"
+
+        android:padding="10dp"
+        android:text="DisplayTheVerb"
+        android:textSize="46dp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/selectedVerbEng_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1"
+
+        android:padding="6dp"
+        android:text="DisplayVerbInEng"
+        android:textSize="34dp"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectedVerb_edit" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectedVerbEng_edit">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Present Table-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:text="Presente do Indicativo (Present)"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Eu "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eu_present_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Present"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Você/Ele/Ela "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/ele_present_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Present"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Nós "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/nos_present_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Present"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Vocês/Eles/Elas "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eles_present_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Present"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+            </LinearLayout>
+
+            <!--Simple Past Table-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:text="Passado Perfeito (Simple Past)"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Eu "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eu_simplepast_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Simple Past"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Você/Ele/Ela "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/ele_simplepast_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Simple Past"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Nós "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/nos_simplepast_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Simple Past"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Vocês/Eles/Elas "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eles_simplepast_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Simple Past"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+            </LinearLayout>
+
+
+            <!--Imperfect Past Table-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:text="Pretérito Imperfeito (Imperfect Past)"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Eu "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eu_imperfectpast_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Imperfect Past"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Você/Ele/Ela "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/ele_imperfectpast_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Imperfect Past"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Nós "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/nos_imperfectpast_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Imperfect Past"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Vocês/Eles/Elas "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eles_imperfectpast_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Imperfect Past"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+            </LinearLayout>
+
+
+            <!--Conditional Table-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:text="Condicional (Conditional)"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Eu "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eu_conditional_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Conditional"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Você/Ele/Ela "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/ele_conditional_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Conditional"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Nós "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/nos_conditional_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Conditional"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Vocês/Eles/Elas "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eles_conditional_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Conditional"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+            </LinearLayout>
+
+            <!--Future Subjunctive Table-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:text="Futuro do Subjuntivo\n(Future Subjunctive)"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Quando/Se eu "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eu_futureSub_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Future Subjunctive"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Quando/Se você/ele/ela "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/ele_futureSub_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Future Subjunctive"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Quando/Se nós "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/nos_futureSub_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Future Subjunctive"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Quando/Se vocês/eles/elas "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eles_futureSub_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Future Subjunctive"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+            </LinearLayout>
+
+            <!--Present Participle Table-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:text="Gerundio (Gerund)"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Eu estou "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eu_gerund_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Present Participle"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Você/Ele/Ela está "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/ele_gerund_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Present Participle"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Nós estamos "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/nos_gerund_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Present Participle"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Vocês/Eles/Elas estão "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eles_gerund_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Present Participle"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+            </LinearLayout>
+
+            <!--Imperative Table-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:text="Imperativo (Imperative)"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/ele_imperative"
+                        android:layout_width="wrap_content"
+                        android:layout_column="0"
+                        android:text="Você/Ele/Ela "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/ele_imperative_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Imperative"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/eles_imperative"
+                        android:layout_width="wrap_content"
+                        android:layout_column="0"
+                        android:text="Vocês/Eles/Elas "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eles_imperative_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Imperative"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+            </LinearLayout>
+
+            <!--Future Table-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:padding="4dp"
+                        android:text="Futuro Simples (Future)"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Eu (vou) "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eu_futureSimple_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Future (simple)"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Você/Ele/Ela (vai) "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/ele_futureSimple_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Future (simple)"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Nós (vamos) "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/nos_futureSimple_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Future (simple)"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="Vocês/Eles/Elas (vão) "
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/eles_futureSimple_edit_txtedit"
+                        android:layout_width="wrap_content"
+                        android:layout_column="1"
+                        android:hint="Future (simple)"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16dp" />
+                </TableRow>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/saveIrregularInfoBn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="150dp"
+                android:text="Save" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

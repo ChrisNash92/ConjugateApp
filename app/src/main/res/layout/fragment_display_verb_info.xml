@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    tools:context=".DisplayVerbInfo">
+
+    <TextView
+        android:id="@+id/selectedVerb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="DisplayTheVerb"
+        android:textSize="46dp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/selectedVerbEng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DisplayVerbInEng"
+        android:textSize="34dp"
+        android:padding="6dp"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectedVerb"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:padding="15dp"
+        app:layout_constraintTop_toBottomOf="@id/selectedVerbEng">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Present Table-->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:padding="4dp"
+                        android:text="Presente do Indicativo (Present)"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eu_present"
+                        android:text="Eu"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/ele_present"
+                        android:text="Você/Ele/Ela"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/nos_present"
+                        android:text="Nós"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eles_present"
+                        android:text="Vocês/Eles/Elas"
+                        android:textSize="16dp"/>
+                </TableRow>
+            </TableLayout>
+
+            <!--Simple Past Table-->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:padding="4dp"
+                        android:text="Passado Perfeito (Simple Past)"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eu_simplepast"
+                        android:text="Eu"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/ele_simplepast"
+                        android:text="Você/Ele/Ela"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/nos_simplepast"
+                        android:text="Nós"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eles_simplepast"
+                        android:text="Vocês/Eles/Elas"
+                        android:textSize="16dp"/>
+                </TableRow>
+            </TableLayout>
+
+            <!--Imperfect Past Table-->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:padding="4dp"
+                        android:text="Pretérito Imperfeito (Imperfect Past)"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eu_imperfectpast"
+                        android:text="Eu"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/ele_imperfectpast"
+                        android:text="Você/Ele/Ela"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/nos_imperfectpast"
+                        android:text="Nós"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eles_imperfectpast"
+                        android:text="Vocês/Eles/Elas"
+                        android:textSize="16dp"/>
+                </TableRow>
+            </TableLayout>
+
+            <!--Conditional Table-->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:padding="4dp"
+                        android:text="Condicional (Conditional)"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eu_conditional"
+                        android:text="Eu"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/ele_conditional"
+                        android:text="Você/Ele/Ela"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/nos_conditional"
+                        android:text="Nós"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eles_conditional"
+                        android:text="Vocês/Eles/Elas"
+                        android:textSize="16dp"/>
+                </TableRow>
+            </TableLayout>
+
+            <!--Future Subjunctive Table-->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:padding="4dp"
+                        android:text="Futuro do Subjuntivo\n(Future Subjunctive)"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eu_futureSub"
+                        android:text="Eu"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/ele_futureSub"
+                        android:text="Você/Ele/Ela"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/nos_futureSub"
+                        android:text="Nós"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eles_futureSub"
+                        android:text="Vocês/Eles/Elas"
+                        android:textSize="16dp"/>
+                </TableRow>
+            </TableLayout>
+
+            <!--Present Participle Table-->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:padding="4dp"
+                        android:text="O Gerundio (Gerund)"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eu_gerund"
+                        android:text="Eu estou"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/ele_gerund"
+                        android:text="Você/Ele/Ela está"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/nos_gerund"
+                        android:text="Nós estamos"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eles_gerund"
+                        android:text="Vocês/Eles/Elas estão"
+                        android:textSize="16dp"/>
+                </TableRow>
+            </TableLayout>
+
+            <!--Imperative Table-->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:padding="4dp"
+                        android:text="Imperativo (Imperative)"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/ele_imperative"
+                        android:text="Eu"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eles_imperative"
+                        android:text="Você/Ele/Ela"
+                        android:textSize="16dp"/>
+                </TableRow>
+            </TableLayout>
+
+            <!--Future Table-->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:layout_marginBottom="200dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape">
+
+                    <TextView
+                        android:padding="4dp"
+                        android:text="Futuro Simples (Future)"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eu_futureSimple"
+                        android:text="Eu (vou)"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/ele_futureSimple"
+                        android:text="Você/Ele/Ela (vai)"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/nos_futureSimple"
+                        android:text="Nós (vamos)"
+                        android:textSize="16dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <TextView
+                        android:id="@+id/eles_futureSimple"
+                        android:text="Vocês/Eles/Elas (vão)"
+                        android:textSize="16dp"/>
+                </TableRow>
+            </TableLayout>
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
