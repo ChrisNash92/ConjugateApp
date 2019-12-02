@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -20,50 +22,7 @@ import org.w3c.dom.Text;
  */
 public class DisplayVerbInfo extends Fragment {
 
-    private TextView title;
-    private TextView subTitle;
     private int mClickPosition;
-
-    //region Variables
-    private TextView eu_present;
-    private TextView ele_present;
-    private TextView nos_present;
-    private TextView eles_present;
-
-    private TextView eu_simplePast;
-    private TextView ele_simplePast;
-    private TextView nos_simplePast;
-    private TextView eles_simplePast;
-
-    private TextView eu_imperfectPast;
-    private TextView ele_imperfectPast;
-    private TextView nos_imperfectPast;
-    private TextView eles_imperfectPast;
-
-    private TextView eu_conditional;
-    private TextView ele_conditional;
-    private TextView nos_conditional;
-    private TextView eles_conditional;
-
-    private TextView eu_futureSub;
-    private TextView ele_futureSub;
-    private TextView nos_futureSub;
-    private TextView eles_futureSub;
-
-    private TextView eu_gerund;
-    private TextView ele_gerund;
-    private TextView nos_gerund;
-    private TextView eles_gerund;
-
-    private TextView ele_imperative;
-    private TextView eles_imperative;
-
-    private TextView eu_simpleFuture;
-    private TextView ele_simpleFuture;
-    private TextView nos_simpleFuture;
-    private TextView eles_simpleFuture;
-    //endregion Variables
-
 
     public DisplayVerbInfo() {
         // Required empty public constructor
@@ -74,10 +33,54 @@ public class DisplayVerbInfo extends Fragment {
 
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        TextView title;
+        TextView subTitle;
+
+
+        //region Variables
+        TextView eu_present;
+        TextView ele_present;
+        TextView nos_present;
+        TextView eles_present;
+
+        TextView eu_simplePast;
+        TextView ele_simplePast;
+        TextView nos_simplePast;
+        TextView eles_simplePast;
+
+        TextView eu_imperfectPast;
+        TextView ele_imperfectPast;
+        TextView nos_imperfectPast;
+        TextView eles_imperfectPast;
+
+        TextView eu_conditional;
+        TextView ele_conditional;
+        TextView nos_conditional;
+        TextView eles_conditional;
+
+        TextView eu_futureSub;
+        TextView ele_futureSub;
+        TextView nos_futureSub;
+        TextView eles_futureSub;
+
+        TextView eu_gerund;
+        TextView ele_gerund;
+        TextView nos_gerund;
+        TextView eles_gerund;
+
+        TextView ele_imperative;
+        TextView eles_imperative;
+
+        TextView eu_simpleFuture;
+        TextView ele_simpleFuture;
+        TextView nos_simpleFuture;
+        TextView eles_simpleFuture;
+        //endregion Variables
+
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_display_verb_info, container, false);
 
@@ -129,6 +132,7 @@ public class DisplayVerbInfo extends Fragment {
 
         ((MainActivity)getActivity()).getSupportActionBar().setTitle("Verb Info");
         ((MainActivity)getActivity()).setHideMenu(false);
+        ((MainActivity)getActivity()).setClickPosition(mClickPosition);
 
         //region Set all text boxes
         eu_present.setText("Eu " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPresent_eu().toLowerCase());
@@ -170,7 +174,6 @@ public class DisplayVerbInfo extends Fragment {
         eles_simpleFuture.setText("Vocês/Eles/Elas (vão) " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getFuture_eles().toLowerCase());
 
         //endregion Set all text boxes
-
 
         return view;
     }

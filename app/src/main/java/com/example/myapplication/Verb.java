@@ -103,6 +103,12 @@ public class Verb {
         this.future_eles = listOfVerbs[29];
     }
 
+    @Ignore //Only used for deleting verbs.
+    public Verb(int id)
+    {
+        this.id = id;
+    }
+
 
     @Ignore
     public Verb(String porVerb, String engVerb, boolean isProtected, String present_eu, String present_ele, String present_nos, String present_eles, String perfectpast_eu, String perfectpast_ele, String perfectpast_nos, String perfectpast_eles, String imperfectpast_eu, String imperfectpast_ele, String imperfectpast_nos, String imperfectpast_eles, String conditional_eu, String conditional_ele, String conditional_nos, String conditional_eles, String futureSub_eu, String futureSub_ele, String futureSub_nos, String futureSub_eles, String presentPart_eu, String presentPart_ele, String presentPart_nos, String presentPart_eles, String imperitive_ele, String imperitive_eles, String future_eu, String future_ele, String future_nos, String future_eles) {
@@ -481,6 +487,8 @@ public class Verb {
                 new Verb("Olhar","To Look",true),
                 new Verb("Pagar","To Pay",true),
                 new Verb("Pegar","To Catch/Pick Up",true)
+
+                //TODO add more verbs
         };
     }
 }

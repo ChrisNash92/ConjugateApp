@@ -6,6 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,6 +16,7 @@ import androidx.room.Room;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -25,12 +28,19 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
     public List<Verb> verbList;
     public static RecyclerAdapter adapter;
     private boolean hideMenu;
+    private int mClickPosition;
 
     public void setHideMenu(boolean hideMenu) {
         this.hideMenu = hideMenu;
         invalidateOptionsMenu();
 
     }
+
+    public void setClickPosition(int ClickPosition)
+    {
+        this.mClickPosition = ClickPosition;
+    }
+
 
     //    private FloatingActionButton fab;
 
@@ -62,9 +72,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
 
     @Override
     public void onBackPressed(){
-        verbList = MainActivity.myAppDatabase.myDao().getVerbs();
-        adapter = new RecyclerAdapter(verbList,this);
 
+        updateRecyclerView();
         fragmentManager.popBackStack();
         if (fragmentManager.findFragmentById(R.id.fragment_container) == null) {
 
@@ -83,18 +92,79 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu,menu);
 
-        MenuItem item = menu.findItem(R.id.settings);
-
         if(hideMenu)
         {
-            item.setVisible(false);
+            menu.setGroupVisible(R.id.settings,false);
         }
         else
         {
-            item.setVisible(true);
+            menu.setGroupVisible(R.id.settings,true);
         }
 
         return true;
+    }
+
+    public void menu_onClick(MenuItem item)
+    {
+        boolean checked = ((MenuItem) item).isChecked();
+
+        // Check which radio button was clicked
+        switch (item.getItemId()) {
+            case R.id.edit_menuItem:
+                if(verbList.get(mClickPosition).isProtected())
+                {
+                    Toast.makeText(this, "Cannot edit verbs in the preloaded database.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddIrregularInfo(mClickPosition)).addToBackStack(null).commit();
+                }
+
+                    break;
+            case R.id.delete_menuItem:
+                if(verbList.get(mClickPosition).isProtected())
+                {
+                    Toast.makeText(this, "Cannot delete verbs in the preloaded database.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            switch (which){
+                                case DialogInterface.BUTTON_POSITIVE:
+
+                                    Verb verb = new Verb(verbList.get(mClickPosition).getId());
+                                    myAppDatabase.myDao().deleteVerb(verb);
+                                    adapter.notifyDataSetChanged();
+                                    updateRecyclerView();
+
+                                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                                    fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                                    break;
+
+                                case DialogInterface.BUTTON_NEGATIVE:
+                                    //No button clicked
+                                    break;
+                            }
+                        }
+                    };
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("Are you sure you want to delete this verb?").setPositiveButton("Yes", dialogClickListener)
+                            .setNegativeButton("No", dialogClickListener).show();
+                }
+                    break;
+            default:
+                break;
+        }
+
+    }
+
+    private void updateRecyclerView()
+    {
+        verbList = MainActivity.myAppDatabase.myDao().getVerbs();
+        adapter = new RecyclerAdapter(verbList,this);
     }
 
 }
