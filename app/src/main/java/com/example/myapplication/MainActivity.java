@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
 
         adapter = new RecyclerAdapter(verbList,this);
 
-        fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).addToBackStack(null).commit();
 
 
     }
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
         fragmentManager.popBackStack();
         if (fragmentManager.findFragmentById(R.id.fragment_container) == null) {
 
-            fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).addToBackStack(null).commit();
 
         }
     }
@@ -139,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
                                     adapter.notifyDataSetChanged();
                                     updateRecyclerView();
 
-                                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).addToBackStack(null).commit();
                                     fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                                     break;
 
@@ -161,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
 
     }
 
-    private void updateRecyclerView()
+    public void updateRecyclerView()
     {
         verbList = MainActivity.myAppDatabase.myDao().getVerbs();
         adapter = new RecyclerAdapter(verbList,this);

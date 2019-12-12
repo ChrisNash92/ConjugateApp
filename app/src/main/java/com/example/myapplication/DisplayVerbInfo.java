@@ -40,7 +40,6 @@ public class DisplayVerbInfo extends Fragment {
         TextView title;
         TextView subTitle;
 
-
         //region Variables
         TextView eu_present;
         TextView ele_present;
@@ -62,6 +61,7 @@ public class DisplayVerbInfo extends Fragment {
         TextView nos_conditional;
         TextView eles_conditional;
 
+        //TODO Figure out difference between Quando and Se and add another section (if required)
         TextView eu_futureSub;
         TextView ele_futureSub;
         TextView nos_futureSub;

@@ -61,7 +61,7 @@ public class Verb {
     private String future_nos;
     private String future_eles;
 
-
+    @Ignore
     public Verb(String porVerb, String engVerb, boolean isProtected) {
         this.porVerb = porVerb;
         this.engVerb = engVerb;
@@ -103,14 +103,12 @@ public class Verb {
         this.future_eles = listOfVerbs[29];
     }
 
-    @Ignore //Only used for deleting verbs.
+    @Ignore
     public Verb(int id)
     {
         this.id = id;
     }
 
-
-    @Ignore
     public Verb(String porVerb, String engVerb, boolean isProtected, String present_eu, String present_ele, String present_nos, String present_eles, String perfectpast_eu, String perfectpast_ele, String perfectpast_nos, String perfectpast_eles, String imperfectpast_eu, String imperfectpast_ele, String imperfectpast_nos, String imperfectpast_eles, String conditional_eu, String conditional_ele, String conditional_nos, String conditional_eles, String futureSub_eu, String futureSub_ele, String futureSub_nos, String futureSub_eles, String presentPart_eu, String presentPart_ele, String presentPart_nos, String presentPart_eles, String imperitive_ele, String imperitive_eles, String future_eu, String future_ele, String future_nos, String future_eles) {
         this.porVerb = porVerb;
         this.engVerb = engVerb;
@@ -146,7 +144,6 @@ public class Verb {
         this.future_nos = future_nos;
         this.future_eles = future_eles;
     }
-
 
     @Ignore
     public Verb(int id, String porVerb, String engVerb, boolean isProtected, String present_eu, String present_ele, String present_nos, String present_eles, String perfectpast_eu, String perfectpast_ele, String perfectpast_nos, String perfectpast_eles, String imperfectpast_eu, String imperfectpast_ele, String imperfectpast_nos, String imperfectpast_eles, String conditional_eu, String conditional_ele, String conditional_nos, String conditional_eles, String futureSub_eu, String futureSub_ele, String futureSub_nos, String futureSub_eles, String presentPart_eu, String presentPart_ele, String presentPart_nos, String presentPart_eles, String imperitive_ele, String imperitive_eles, String future_eu, String future_ele, String future_nos, String future_eles) {
@@ -486,7 +483,45 @@ public class Verb {
                 new Verb("Nadar","To Swim",true),
                 new Verb("Olhar","To Look",true),
                 new Verb("Pagar","To Pay",true),
-                new Verb("Pegar","To Catch/Pick Up",true)
+                new Verb("Pegar","To Catch/Pick Up",true),
+                new Verb("Dançar","To Dance",true),
+                new Verb("Pendurar","To Hang",true),
+                new Verb("Derrubar","To Drop",true),
+                new Verb("Procurar","To Look For",true),
+                new Verb("Desamarrar","To Untie",true),
+                new Verb("Terminar","To Finish/End",true),
+                new Verb("Embrulhar","To Wrap",true),
+                new Verb("Virar","To Turn/Turn Into",true),
+                new Verb("Emprestar","To Borrow",true),
+                new Verb("Escrever","To Write",true),
+                new Verb("Correr","To Run",true),
+                new Verb("Vender","To Sell",true),
+                new Verb("Acender","To Illuminate",true),
+                new Verb("Esquecer","To Forget",true),
+                new Verb("Entender","To Understand",true),
+                new Verb("Morrer","To Die",true),
+                new Verb("Perder","To Lose",true),
+                new Verb("Resolver","To Decide",true),
+                new Verb("Descer","To Descend",true),
+                new Verb("Chover","To Rain",true),
+                new Verb("Pretender","To Intend",true),
+                new Verb("Beber","To Drink",true),
+                new Verb("Conhencer","To Know",true),
+                new Verb("Comer","To Eat",true),
+                new Verb("Escolher","To Choose",true),
+                new Verb("Viver","To Live",true),
+                new Verb("Receber","To Receive",true),
+                new Verb("Estabelecer","To Establish",true),
+                new Verb("Assistir","To Watch",true),
+                new Verb("Decidir","To Decide",true),
+                new Verb("Reunir","To Gather",true),
+                new Verb("Permitir","To Permit",true),
+                new Verb("Dormir","To Sleep",true),
+                new Verb("Cobrir","To Cover",true),
+                new Verb("Tossir","To Cough",true),
+                new Verb("Ir","To Go",true,"Vou","Vai","Vamos","Vão","Fui","Foi","Fomos","Foram","Ia","Ia","Íamos","Iam","Iria","Iria","Iríamos","Iriam","For","For","Formos","Forem","Indo","Indo","Indo","Indo","Vá","Vão","Irei","Irá","Iremos","Irão")
+
+
 
                 //TODO add more verbs
         };

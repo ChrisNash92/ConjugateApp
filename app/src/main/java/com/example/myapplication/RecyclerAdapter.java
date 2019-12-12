@@ -71,7 +71,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        //holder.VersionName.setText(list.get(position));
         mPortVerb = holder.VersionName.getRootView().findViewById(R.id.txt_port);
         mEngVerb = holder.VersionName.getRootView().findViewById(R.id.txt_eng);
 

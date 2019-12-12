@@ -127,7 +127,17 @@ public class ConjugateVerb {
         if(verbType.matches("(?i)ir")){
 
             //Present
-            toReturn[0] = verbBody + "o";
+            if(String.valueOf(verbBody.charAt(1)).matches("(?i)o"))
+            {
+                StringBuilder newVerbBody = new StringBuilder(verbBody);
+                newVerbBody.setCharAt(1, 'u');
+                toReturn[0] = newVerbBody + "o";
+            }
+            else
+            {
+                toReturn[0] = verbBody + "o";
+            }
+
             toReturn[1] = verbBody + "e";
             toReturn[2] = verbBody + "imos";
             toReturn[3] = verbBody + "em";

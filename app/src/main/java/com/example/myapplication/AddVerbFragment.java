@@ -107,7 +107,7 @@ public class AddVerbFragment extends Fragment implements View.OnClickListener {
                         MainActivity.adapter.notifyDataSetChanged();
                     }
                     if (rbIrregular.isChecked()) {
-                        MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddIrregularInfo(porverb,engverb)).commit();
+                        MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddIrregularInfo(porverb,engverb)).addToBackStack(null).commit();
                     }
 
                 }

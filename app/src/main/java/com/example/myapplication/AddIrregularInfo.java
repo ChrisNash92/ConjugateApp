@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.nio.charset.MalformedInputException;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -212,8 +214,10 @@ public class AddIrregularInfo extends Fragment {
 
                     MainActivity.myAppDatabase.myDao().updateVerb(updatedVerb);
                     MainActivity.adapter.notifyDataSetChanged();
+                    ((MainActivity)getActivity()).updateRecyclerView();
 
-
+                    Toast.makeText(getActivity(), "Verb updated successfully", Toast.LENGTH_SHORT).show();
+                    
                 }
             });
 
@@ -274,7 +278,7 @@ public class AddIrregularInfo extends Fragment {
                         ((MainActivity)getActivity()).verbList = MainActivity.myAppDatabase.myDao().getVerbs();
                         Toast.makeText(getActivity(), "Verb added successfully", Toast.LENGTH_SHORT).show();
 
-                        MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                        MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).addToBackStack(null).commit();
                         MainActivity.fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 
                     }
