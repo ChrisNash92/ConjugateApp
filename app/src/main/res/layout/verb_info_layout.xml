@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cardview_light_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/verbTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cell_shape"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tense_port_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="Tense (Portuguese)"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tense_eng_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:padding="4dp"
+                android:text="Tense (English)"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/eu_txt"
+                android:text="@string/eu"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/eu_verb_txt"
+                android:text="@string/verb"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/eu_verb_edit"
+                android:text="@string/verb"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/ele_txt"
+                android:text="@string/voc_ele_ela"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/ele_verb_txt"
+                android:text="@string/verb"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/ele_verb_edit"
+                android:text="@string/verb"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/nos_txt"
+                android:text="@string/nos"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/nos_verb_txt"
+                android:text="@string/verb"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/nos_verb_edit"
+                android:text="@string/verb"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/eles_txt"
+                android:text="Vocês/Eles/Elas"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/eles_verb_txt"
+                android:text="@string/verb"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/eles_verb_edit"
+                android:text="@string/verb"
+                android:textSize="16sp" />
+        </TableRow>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@id/verbTable"
+        tools:ignore="SmallSp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
