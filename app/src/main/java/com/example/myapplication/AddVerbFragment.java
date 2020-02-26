@@ -41,6 +41,7 @@ public class AddVerbFragment extends Fragment implements View.OnClickListener {
                 && (str.matches("^[a-zA-Z ]*$")));
     }
 
+    //TODO Regular and Irregular verbs do not matter, change to just Next button.
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

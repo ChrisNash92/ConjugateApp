@@ -14,7 +14,7 @@ import org.w3c.dom.Text;
 import java.util.Arrays;
 import java.util.List;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+public class VerbListRecyclerAdapter extends RecyclerView.Adapter<VerbListRecyclerAdapter.MyViewHolder> {
 
     private List<Verb> list;
     private TextView mPortVerb;
@@ -22,7 +22,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     private OnNoteListener mOnNoteListener;
     private Verb[] listCopy;
 
-    public RecyclerAdapter(List<Verb> list, OnNoteListener onNoteListener)
+    public VerbListRecyclerAdapter(List<Verb> list, OnNoteListener onNoteListener)
     {
         this.list = list;
         this.mOnNoteListener = onNoteListener;
@@ -61,7 +61,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View textView = (View) LayoutInflater.from(parent.getContext()).inflate(R.layout.text_view_layout,parent,false);
+        View textView = (View) LayoutInflater.from(parent.getContext()).inflate(R.layout.verb_list_layout,parent,false);
 
         MyViewHolder myViewHolder = new MyViewHolder(textView,mOnNoteListener);
 

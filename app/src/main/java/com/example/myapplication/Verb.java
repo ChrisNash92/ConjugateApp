@@ -4,6 +4,9 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity(tableName = "verbs")
 public class Verb {
 
@@ -15,51 +18,28 @@ public class Verb {
 
     private boolean isProtected;
 
-    //Present
-    private String present_eu;
-    private String present_ele;
-    private String present_nos;
-    private String present_eles;
+    private String[] Present; //1
+    private String[] PerfectPast; //2
+    private String[] ImperfectPast; //3
+    private String[] MTPPast; //4
+    private String[] PerfectPastCompound; //5
+    private String[] MTPPastCompound; //6
+    private String[] PastMTPPast; //7
+    private String[] SimpleFuture; //8
+    private String[] FutureCompound; //9
+    private String[] ConSubPresent; //10
+    private String[] ConSubPerfectPast; //11
+    private String[] ConSubImperfectPast; //12
+    private String[] ConSubMTPCompound; //13
+    private String[] ConSubFuture; //14
+    private String[] ConSubFutureCompound; //15
+    private String[] ConditionalFuture; //16
+    private String[] ConditionalFutureOfPast; //17
+    private String[] Imperative; //18
+    private String[] NegImperative; //19
 
-    //Perfect Past
-    private String perfectpast_eu;
-    private String perfectpast_ele;
-    private String perfectpast_nos;
-    private String perfectpast_eles;
 
-    //Imperfect Past
-    private String imperfectpast_eu;
-    private String imperfectpast_ele;
-    private String imperfectpast_nos;
-    private String imperfectpast_eles;
 
-    //Conditional Tense
-    private String conditional_eu;
-    private String conditional_ele;
-    private String conditional_nos;
-    private String conditional_eles;
-
-    //Future Subjunctive Tense
-    private String futureSub_eu;
-    private String futureSub_ele;
-    private String futureSub_nos;
-    private String futureSub_eles;
-
-    //Present Participle
-    private String presentPart_eu;
-    private String presentPart_ele;
-    private String presentPart_nos;
-    private String presentPart_eles;
-
-    //Imperitive
-    private String imperitive_ele;
-    private String imperitive_eles;
-
-    //Present Participle
-    private String future_eu;
-    private String future_ele;
-    private String future_nos;
-    private String future_eles;
 
     @Ignore
     public Verb(String porVerb, String engVerb, boolean isProtected) {
@@ -69,118 +49,86 @@ public class Verb {
 
         ConjugateVerb cr = new ConjugateVerb(porVerb);
 
-        String[] listOfVerbs = cr.getConjVerbs();
+        List<String[]> listOfVerbs = cr.getConjVerbs();
 
-        this.present_eu = listOfVerbs[0];
-        this.present_ele = listOfVerbs[1];
-        this.present_nos = listOfVerbs[2];
-        this.present_eles = listOfVerbs[3];
-        this.perfectpast_eu = listOfVerbs[4];
-        this.perfectpast_ele = listOfVerbs[5];
-        this.perfectpast_nos = listOfVerbs[6];
-        this.perfectpast_eles = listOfVerbs[7];
-        this.imperfectpast_eu = listOfVerbs[8];
-        this.imperfectpast_ele = listOfVerbs[9];
-        this.imperfectpast_nos = listOfVerbs[10];
-        this.imperfectpast_eles = listOfVerbs[11];
-        this.conditional_eu = listOfVerbs[12];
-        this.conditional_ele = listOfVerbs[13];
-        this.conditional_nos = listOfVerbs[14];
-        this.conditional_eles = listOfVerbs[15];
-        this.futureSub_eu = listOfVerbs[16];
-        this.futureSub_ele = listOfVerbs[17];
-        this.futureSub_nos = listOfVerbs[18];
-        this.futureSub_eles = listOfVerbs[19];
-        this.presentPart_eu = listOfVerbs[20];
-        this.presentPart_ele = listOfVerbs[21];
-        this.presentPart_nos = listOfVerbs[22];
-        this.presentPart_eles = listOfVerbs[23];
-        this.imperitive_ele = listOfVerbs[24];
-        this.imperitive_eles = listOfVerbs[25];
-        this.future_eu = listOfVerbs[26];
-        this.future_ele = listOfVerbs[27];
-        this.future_nos = listOfVerbs[28];
-        this.future_eles = listOfVerbs[29];
+        this.Present = listOfVerbs.get(0);
+        this.PerfectPast = listOfVerbs.get(1);
+        this.ImperfectPast = listOfVerbs.get(2);
+        this.MTPPast = listOfVerbs.get(3);
+        this.PerfectPastCompound = listOfVerbs.get(4);
+        this.MTPPastCompound = listOfVerbs.get(5);
+        this.PastMTPPast = listOfVerbs.get(6);
+        this.SimpleFuture = listOfVerbs.get(7);
+        this.FutureCompound = listOfVerbs.get(8);
+        this.ConSubPresent = listOfVerbs.get(9);
+        this.ConSubPerfectPast = listOfVerbs.get(10);
+        this.ConSubImperfectPast = listOfVerbs.get(11);
+        this.ConSubMTPCompound = listOfVerbs.get(12);
+        this.ConSubFuture = listOfVerbs.get(13);
+        this.ConSubFutureCompound = listOfVerbs.get(14);
+        this.ConditionalFuture = listOfVerbs.get(15);
+        this.ConditionalFutureOfPast = listOfVerbs.get(16);
+        this.Imperative = listOfVerbs.get(17);
+        this.NegImperative = listOfVerbs.get(18);
+
+
     }
 
-    @Ignore
+    public Verb(String porVerb, String engVerb, boolean isProtected, String[] present, String[] perfectPast, String[] imperfectPast, String[] MTPPast, String[] perfectPastCompound, String[] MTPPastCompound, String[] pastMTPPast, String[] simpleFuture, String[] futureCompound, String[] conSubPresent, String[] conSubPerfectPast, String[] conSubImperfectPast, String[] conSubMTPCompound, String[] conSubFuture, String[] conSubFutureCompound, String[] conditionalFuture, String[] conditionalFutureOfPast, String[] imperative, String[] negImperative) {
+        this.porVerb = porVerb;
+        this.engVerb = engVerb;
+        this.isProtected = isProtected;
+        Present = present;
+        PerfectPast = perfectPast;
+        ImperfectPast = imperfectPast;
+        this.MTPPast = MTPPast;
+        PerfectPastCompound = perfectPastCompound;
+        this.MTPPastCompound = MTPPastCompound;
+        PastMTPPast = pastMTPPast;
+        SimpleFuture = simpleFuture;
+        FutureCompound = futureCompound;
+        ConSubPresent = conSubPresent;
+        ConSubPerfectPast = conSubPerfectPast;
+        ConSubImperfectPast = conSubImperfectPast;
+        ConSubMTPCompound = conSubMTPCompound;
+        ConSubFuture = conSubFuture;
+        ConSubFutureCompound = conSubFutureCompound;
+        ConditionalFuture = conditionalFuture;
+        ConditionalFutureOfPast = conditionalFutureOfPast;
+        Imperative = imperative;
+        NegImperative = negImperative;
+    }
+
+    public List<String[]> getVerbInfo()
+    {
+        List<String[]> toReturn = new ArrayList<>();
+        toReturn.add(Present); //1
+        toReturn.add(PerfectPast); //2
+        toReturn.add(ImperfectPast); //3
+        toReturn.add(MTPPast); //4
+        toReturn.add(PerfectPastCompound); //5
+        toReturn.add(MTPPastCompound); //6
+        toReturn.add(PastMTPPast); //7
+        toReturn.add(SimpleFuture); //8
+        toReturn.add(FutureCompound); //9
+        toReturn.add(ConSubPresent); //10
+        toReturn.add(ConSubPerfectPast); //11
+        toReturn.add(ConSubImperfectPast); //12
+        toReturn.add(ConSubMTPCompound); //13
+        toReturn.add(ConSubFuture); //14
+        toReturn.add(ConSubFutureCompound); //15
+        toReturn.add(ConditionalFuture); //16
+        toReturn.add(ConditionalFutureOfPast); //17
+        toReturn.add(Imperative); //18
+        toReturn.add(NegImperative); //19
+
+        return toReturn;
+    }
+
+    //region Getter Setter
     public Verb(int id)
     {
         this.id = id;
-    }
-
-    public Verb(String porVerb, String engVerb, boolean isProtected, String present_eu, String present_ele, String present_nos, String present_eles, String perfectpast_eu, String perfectpast_ele, String perfectpast_nos, String perfectpast_eles, String imperfectpast_eu, String imperfectpast_ele, String imperfectpast_nos, String imperfectpast_eles, String conditional_eu, String conditional_ele, String conditional_nos, String conditional_eles, String futureSub_eu, String futureSub_ele, String futureSub_nos, String futureSub_eles, String presentPart_eu, String presentPart_ele, String presentPart_nos, String presentPart_eles, String imperitive_ele, String imperitive_eles, String future_eu, String future_ele, String future_nos, String future_eles) {
-        this.porVerb = porVerb;
-        this.engVerb = engVerb;
-        this.isProtected = isProtected;
-        this.present_eu = present_eu;
-        this.present_ele = present_ele;
-        this.present_nos = present_nos;
-        this.present_eles = present_eles;
-        this.perfectpast_eu = perfectpast_eu;
-        this.perfectpast_ele = perfectpast_ele;
-        this.perfectpast_nos = perfectpast_nos;
-        this.perfectpast_eles = perfectpast_eles;
-        this.imperfectpast_eu = imperfectpast_eu;
-        this.imperfectpast_ele = imperfectpast_ele;
-        this.imperfectpast_nos = imperfectpast_nos;
-        this.imperfectpast_eles = imperfectpast_eles;
-        this.conditional_eu = conditional_eu;
-        this.conditional_ele = conditional_ele;
-        this.conditional_nos = conditional_nos;
-        this.conditional_eles = conditional_eles;
-        this.futureSub_eu = futureSub_eu;
-        this.futureSub_ele = futureSub_ele;
-        this.futureSub_nos = futureSub_nos;
-        this.futureSub_eles = futureSub_eles;
-        this.presentPart_eu = presentPart_eu;
-        this.presentPart_ele = presentPart_ele;
-        this.presentPart_nos = presentPart_nos;
-        this.presentPart_eles = presentPart_eles;
-        this.imperitive_ele = imperitive_ele;
-        this.imperitive_eles = imperitive_eles;
-        this.future_eu = future_eu;
-        this.future_ele = future_ele;
-        this.future_nos = future_nos;
-        this.future_eles = future_eles;
-    }
-
-    @Ignore
-    public Verb(int id, String porVerb, String engVerb, boolean isProtected, String present_eu, String present_ele, String present_nos, String present_eles, String perfectpast_eu, String perfectpast_ele, String perfectpast_nos, String perfectpast_eles, String imperfectpast_eu, String imperfectpast_ele, String imperfectpast_nos, String imperfectpast_eles, String conditional_eu, String conditional_ele, String conditional_nos, String conditional_eles, String futureSub_eu, String futureSub_ele, String futureSub_nos, String futureSub_eles, String presentPart_eu, String presentPart_ele, String presentPart_nos, String presentPart_eles, String imperitive_ele, String imperitive_eles, String future_eu, String future_ele, String future_nos, String future_eles) {
-        this.id = id;
-        this.porVerb = porVerb;
-        this.engVerb = engVerb;
-        this.isProtected = isProtected;
-        this.present_eu = present_eu;
-        this.present_ele = present_ele;
-        this.present_nos = present_nos;
-        this.present_eles = present_eles;
-        this.perfectpast_eu = perfectpast_eu;
-        this.perfectpast_ele = perfectpast_ele;
-        this.perfectpast_nos = perfectpast_nos;
-        this.perfectpast_eles = perfectpast_eles;
-        this.imperfectpast_eu = imperfectpast_eu;
-        this.imperfectpast_ele = imperfectpast_ele;
-        this.imperfectpast_nos = imperfectpast_nos;
-        this.imperfectpast_eles = imperfectpast_eles;
-        this.conditional_eu = conditional_eu;
-        this.conditional_ele = conditional_ele;
-        this.conditional_nos = conditional_nos;
-        this.conditional_eles = conditional_eles;
-        this.futureSub_eu = futureSub_eu;
-        this.futureSub_ele = futureSub_ele;
-        this.futureSub_nos = futureSub_nos;
-        this.futureSub_eles = futureSub_eles;
-        this.presentPart_eu = presentPart_eu;
-        this.presentPart_ele = presentPart_ele;
-        this.presentPart_nos = presentPart_nos;
-        this.presentPart_eles = presentPart_eles;
-        this.imperitive_ele = imperitive_ele;
-        this.imperitive_eles = imperitive_eles;
-        this.future_eu = future_eu;
-        this.future_ele = future_ele;
-        this.future_nos = future_nos;
-        this.future_eles = future_eles;
     }
 
     public int getId() {
@@ -215,245 +163,159 @@ public class Verb {
         isProtected = aProtected;
     }
 
-    public String getPresent_eu() {
-        return present_eu;
+    public String[] getPresent() {
+        return Present;
     }
 
-    public void setPresent_eu(String present_eu) {
-        this.present_eu = present_eu;
+    public void setPresent(String[] present) {
+        Present = present;
     }
 
-    public String getPresent_ele() {
-        return present_ele;
+    public String[] getPerfectPast() {
+        return PerfectPast;
     }
 
-    public void setPresent_ele(String present_ele) {
-        this.present_ele = present_ele;
+    public void setPerfectPast(String[] perfectPast) {
+        PerfectPast = perfectPast;
     }
 
-    public String getPresent_nos() {
-        return present_nos;
+    public String[] getImperfectPast() {
+        return ImperfectPast;
     }
 
-    public void setPresent_nos(String present_nos) {
-        this.present_nos = present_nos;
+    public void setImperfectPast(String[] imperfectPast) {
+        ImperfectPast = imperfectPast;
     }
 
-    public String getPresent_eles() {
-        return present_eles;
+    public String[] getMTPPast() {
+        return MTPPast;
     }
 
-    public void setPresent_eles(String present_eles) {
-        this.present_eles = present_eles;
+    public void setMTPPast(String[] MTPPast) {
+        this.MTPPast = MTPPast;
     }
 
-    public String getPerfectpast_eu() {
-        return perfectpast_eu;
+    public String[] getPerfectPastCompound() {
+        return PerfectPastCompound;
     }
 
-    public void setPerfectpast_eu(String perfectpast_eu) {
-        this.perfectpast_eu = perfectpast_eu;
+    public void setPerfectPastCompound(String[] perfectPastCompound) {
+        PerfectPastCompound = perfectPastCompound;
     }
 
-    public String getPerfectpast_ele() {
-        return perfectpast_ele;
+    public String[] getMTPPastCompound() {
+        return MTPPastCompound;
     }
 
-    public void setPerfectpast_ele(String perfectpast_ele) {
-        this.perfectpast_ele = perfectpast_ele;
+    public void setMTPPastCompound(String[] MTPPastCompound) {
+        this.MTPPastCompound = MTPPastCompound;
     }
 
-    public String getPerfectpast_nos() {
-        return perfectpast_nos;
+    public String[] getPastMTPPast() {
+        return PastMTPPast;
     }
 
-    public void setPerfectpast_nos(String perfectpast_nos) {
-        this.perfectpast_nos = perfectpast_nos;
+    public void setPastMTPPast(String[] pastMTPPast) {
+        PastMTPPast = pastMTPPast;
     }
 
-    public String getPerfectpast_eles() {
-        return perfectpast_eles;
+    public String[] getSimpleFuture() {
+        return SimpleFuture;
     }
 
-    public void setPerfectpast_eles(String perfectpast_eles) {
-        this.perfectpast_eles = perfectpast_eles;
+    public void setSimpleFuture(String[] simpleFuture) {
+        SimpleFuture = simpleFuture;
     }
 
-    public String getImperfectpast_eu() {
-        return imperfectpast_eu;
+    public String[] getFutureCompound() {
+        return FutureCompound;
     }
 
-    public void setImperfectpast_eu(String imperfectpast_eu) {
-        this.imperfectpast_eu = imperfectpast_eu;
+    public void setFutureCompound(String[] futureCompound) {
+        FutureCompound = futureCompound;
     }
 
-    public String getImperfectpast_ele() {
-        return imperfectpast_ele;
+    public String[] getConSubPresent() {
+        return ConSubPresent;
     }
 
-    public void setImperfectpast_ele(String imperfectpast_ele) {
-        this.imperfectpast_ele = imperfectpast_ele;
+    public void setConSubPresent(String[] conSubPresent) {
+        ConSubPresent = conSubPresent;
     }
 
-    public String getImperfectpast_nos() {
-        return imperfectpast_nos;
+    public String[] getConSubPerfectPast() {
+        return ConSubPerfectPast;
     }
 
-    public void setImperfectpast_nos(String imperfectpast_nos) {
-        this.imperfectpast_nos = imperfectpast_nos;
+    public void setConSubPerfectPast(String[] conSubPerfectPast) {
+        ConSubPerfectPast = conSubPerfectPast;
     }
 
-    public String getImperfectpast_eles() {
-        return imperfectpast_eles;
+    public String[] getConSubImperfectPast() {
+        return ConSubImperfectPast;
     }
 
-    public void setImperfectpast_eles(String imperfectpast_eles) {
-        this.imperfectpast_eles = imperfectpast_eles;
+    public void setConSubImperfectPast(String[] conSubImperfectPast) {
+        ConSubImperfectPast = conSubImperfectPast;
     }
 
-    public String getConditional_eu() {
-        return conditional_eu;
+    public String[] getConSubMTPCompound() {
+        return ConSubMTPCompound;
     }
 
-    public void setConditional_eu(String conditional_eu) {
-        this.conditional_eu = conditional_eu;
+    public void setConSubMTPCompound(String[] conSubMTPCompound) {
+        ConSubMTPCompound = conSubMTPCompound;
     }
 
-    public String getConditional_ele() {
-        return conditional_ele;
+    public String[] getConSubFuture() {
+        return ConSubFuture;
     }
 
-    public void setConditional_ele(String conditional_ele) {
-        this.conditional_ele = conditional_ele;
+    public void setConSubFuture(String[] conSubFuture) {
+        ConSubFuture = conSubFuture;
     }
 
-    public String getConditional_nos() {
-        return conditional_nos;
+    public String[] getConSubFutureCompound() {
+        return ConSubFutureCompound;
     }
 
-    public void setConditional_nos(String conditional_nos) {
-        this.conditional_nos = conditional_nos;
+    public void setConSubFutureCompound(String[] conSubFutureCompound) {
+        ConSubFutureCompound = conSubFutureCompound;
     }
 
-    public String getConditional_eles() {
-        return conditional_eles;
+    public String[] getConditionalFuture() {
+        return ConditionalFuture;
     }
 
-    public void setConditional_eles(String conditional_eles) {
-        this.conditional_eles = conditional_eles;
+    public void setConditionalFuture(String[] conditionalFuture) {
+        ConditionalFuture = conditionalFuture;
     }
 
-    public String getFutureSub_eu() {
-        return futureSub_eu;
+    public String[] getConditionalFutureOfPast() {
+        return ConditionalFutureOfPast;
     }
 
-    public void setFutureSub_eu(String futureSub_eu) {
-        this.futureSub_eu = futureSub_eu;
+    public void setConditionalFutureOfPast(String[] conditionalFutureOfPast) {
+        ConditionalFutureOfPast = conditionalFutureOfPast;
     }
 
-    public String getFutureSub_ele() {
-        return futureSub_ele;
+    public String[] getImperative() {
+        return Imperative;
     }
 
-    public void setFutureSub_ele(String futureSub_ele) {
-        this.futureSub_ele = futureSub_ele;
+    public void setImperative(String[] imperative) {
+        Imperative = imperative;
     }
 
-    public String getFutureSub_nos() {
-        return futureSub_nos;
+    public String[] getNegImperative() {
+        return NegImperative;
     }
 
-    public void setFutureSub_nos(String futureSub_nos) {
-        this.futureSub_nos = futureSub_nos;
+    public void setNegImperative(String[] negImperative) {
+        NegImperative = negImperative;
     }
 
-    public String getFutureSub_eles() {
-        return futureSub_eles;
-    }
-
-    public void setFutureSub_eles(String futureSub_eles) {
-        this.futureSub_eles = futureSub_eles;
-    }
-
-    public String getPresentPart_eu() {
-        return presentPart_eu;
-    }
-
-    public void setPresentPart_eu(String presentPart_eu) {
-        this.presentPart_eu = presentPart_eu;
-    }
-
-    public String getPresentPart_ele() {
-        return presentPart_ele;
-    }
-
-    public void setPresentPart_ele(String presentPart_ele) {
-        this.presentPart_ele = presentPart_ele;
-    }
-
-    public String getPresentPart_nos() {
-        return presentPart_nos;
-    }
-
-    public void setPresentPart_nos(String presentPart_nos) {
-        this.presentPart_nos = presentPart_nos;
-    }
-
-    public String getPresentPart_eles() {
-        return presentPart_eles;
-    }
-
-    public void setPresentPart_eles(String presentPart_eles) {
-        this.presentPart_eles = presentPart_eles;
-    }
-
-    public String getImperitive_ele() {
-        return imperitive_ele;
-    }
-
-    public void setImperitive_ele(String imperitive_ele) {
-        this.imperitive_ele = imperitive_ele;
-    }
-
-    public String getImperitive_eles() {
-        return imperitive_eles;
-    }
-
-    public void setImperitive_eles(String imperitive_eles) {
-        this.imperitive_eles = imperitive_eles;
-    }
-
-    public String getFuture_eu() {
-        return future_eu;
-    }
-
-    public void setFuture_eu(String future_eu) {
-        this.future_eu = future_eu;
-    }
-
-    public String getFuture_ele() {
-        return future_ele;
-    }
-
-    public void setFuture_ele(String future_ele) {
-        this.future_ele = future_ele;
-    }
-
-    public String getFuture_nos() {
-        return future_nos;
-    }
-
-    public void setFuture_nos(String future_nos) {
-        this.future_nos = future_nos;
-    }
-
-    public String getFuture_eles() {
-        return future_eles;
-    }
-
-    public void setFuture_eles(String future_eles) {
-        this.future_eles = future_eles;
-    }
+    //endregion
 
     public static Verb[] preloadVerbs(){
         return new Verb[] {
@@ -519,8 +381,6 @@ public class Verb {
                 new Verb("Dormir","To Sleep",true),
                 new Verb("Cobrir","To Cover",true),
                 new Verb("Tossir","To Cough",true),
-                new Verb("Ir","To Go",true,"Vou","Vai","Vamos","Vão","Fui","Foi","Fomos","Foram","Ia","Ia","Íamos","Iam","Iria","Iria","Iríamos","Iriam","For","For","Formos","Forem","Indo","Indo","Indo","Indo","Vá","Vão","Irei","Irá","Iremos","Irão")
-
 
 
                 //TODO add more verbs

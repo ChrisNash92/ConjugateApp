@@ -20,7 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListFragment extends Fragment implements View.OnClickListener, RecyclerAdapter.OnNoteListener {
+public class ListFragment extends Fragment implements View.OnClickListener, VerbListRecyclerAdapter.OnNoteListener {
 
 
     public RecyclerView recyclerView;
@@ -38,7 +38,7 @@ public class ListFragment extends Fragment implements View.OnClickListener, Recy
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_verb_list, container, false);
         fab = view.findViewById(R.id.floatingActionButton);
         fab.show();
 
@@ -47,7 +47,7 @@ public class ListFragment extends Fragment implements View.OnClickListener, Recy
 
         searchView = view.findViewById(R.id.search_bar);
 
-        MainActivity.adapter = new RecyclerAdapter(((MainActivity)getActivity()).verbList,this);
+        MainActivity.adapter = new VerbListRecyclerAdapter(((MainActivity)getActivity()).verbList,this);
         recyclerView = view.findViewById(R.id.recyclerview);
         layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);

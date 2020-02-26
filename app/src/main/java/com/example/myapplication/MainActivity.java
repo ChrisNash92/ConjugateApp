@@ -23,11 +23,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements RecyclerAdapter.OnNoteListener {
+public class MainActivity extends AppCompatActivity implements VerbListRecyclerAdapter.OnNoteListener {
     public static FragmentManager fragmentManager;
     public static MyAppDatabase myAppDatabase;
     public List<Verb> verbList;
-    public static RecyclerAdapter adapter;
+    public static VerbListRecyclerAdapter adapter;
     private boolean hideMenu;
     private int mClickPosition;
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
             verbList = MainActivity.myAppDatabase.myDao().getVerbs();
         }
 
-        adapter = new RecyclerAdapter(verbList,this);
+        adapter = new VerbListRecyclerAdapter(verbList,this);
 
         fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).addToBackStack(null).commit();
 
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
     public void updateRecyclerView()
     {
         verbList = MainActivity.myAppDatabase.myDao().getVerbs();
-        adapter = new RecyclerAdapter(verbList,this);
+        adapter = new VerbListRecyclerAdapter(verbList,this);
     }
 
 }

@@ -1,22 +1,11 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Conjugator</string>
+    <string name="eu">Eu </string>
+    <string name="verb">verb</string>
+    <string name="voc_ele_ela">Você/Ele/Ela </string>
+    <string name="nos">Nós </string>
+    <string name="vocs_eles_elas">Vocês/Eles/Elas </string>
 
     <!-- TODO: Move all hardcoded values to Resources -->
-    <string-array name="android_types">
-        <item>Cupcake</item>
-        <item>Donut</item>
-        <item>Eclair</item>
-        <item>Froyo</item>
-        <item>Gingerbread</item>
-        <item>Honeycomb</item>
-        <item>Ice Cream</item>
-        <item>Jelly Bean</item>
-        <item>KitKat</item>
-        <item>Lollipop</item>
-        <item>Marshmallow</item>
-        <item>Nougat</item>
-        <item>Oreo</item>
-        <item>Android P</item>
-    </string-array>
 
 </resources>

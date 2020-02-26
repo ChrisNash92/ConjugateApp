@@ -1,5 +1,8 @@
 package com.example.myapplication;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ConjugateVerb {
 
     private String mVerb;
@@ -8,184 +11,462 @@ public class ConjugateVerb {
         mVerb = verb;
     }
 
-    public String[] getConjVerbs(){
-        String[] toReturn = new String[30];
+    public List<String[]> getConjVerbs(){
+        List<String[]> toReturn = new ArrayList<>();
+        String verbRule;
 
         String verbType = mVerb.substring(mVerb.length()-2);
         String verbBody = mVerb.substring(0,mVerb.length()-2);
 
         if(verbType.matches("(?i)ar")){
-            //Present
-            toReturn[0] = verbBody + "o";
-            toReturn[1] = verbBody + "a";
-            toReturn[2] = verbBody + "amos";
-            toReturn[3] = verbBody + "am";
 
-            //Perfect past
+            //1 Present
+            toReturn.add(new String[]{"Indicativo Presente", "Present",
+                    verbBody + "o",
+                    verbBody + "a",
+                    verbBody + "amos",
+                    verbBody + "am"});
+
+            //2 Perfect past
             if(String.valueOf(verbBody.charAt(verbBody.length() - 1)).matches("(?i)g"))
             {
-                toReturn[4] = verbBody + "uei";
+                verbRule = verbBody + "uei";
             }
             else if(String.valueOf(verbBody.charAt(verbBody.length() - 1)).matches("(?i)c"))
             {
-                toReturn[4] = verbBody.substring(0,verbBody.length()-1) + "quei";
+                verbRule = verbBody.substring(0,verbBody.length()-1) + "quei";
             }
             else{
-                toReturn[4] = verbBody + "ei";
+                verbRule = verbBody + "ei";
             }
 
-            toReturn[5] = verbBody + "ou";
-            toReturn[6] = verbBody + "amos";
-            toReturn[7] = verbBody + "aram";
+            toReturn.add(new String[]{"Indicativo Pretérito Perfeito","Perfect Past",
+                    verbRule,
+                    verbBody + "ou",
+                    verbBody + "amos",
+                    verbBody + "aram"});
 
-            //Imperfect Past
-            toReturn[8] = verbBody + "ava";
-            toReturn[9] = verbBody + "ava";
-            toReturn[10] = verbBody + "ávamos";
-            toReturn[11] = verbBody + "avam";
+            //3 Imperfect Past
+            toReturn.add(new String[]{"Indicativo Pretérito Imperfeito","Imperfect Past",
+                    verbBody + "ava",
+                    verbBody + "ava",
+                    verbBody + "ávamos",
+                    verbBody + "avam"});
 
-            //Conditional
-            toReturn[12] = verbBody + "aria";
-            toReturn[13] = verbBody + "aria";
-            toReturn[14] = verbBody + "aríamos";
-            toReturn[15] = verbBody + "ariam";
+            //4 More than perfect past
+            toReturn.add(new String[]{"Indicativo Pretérito Mais-Que-Perfeito","More-Than-Perfect Past",
+                    verbBody + "ara",
+                    verbBody + "ara",
+                    verbBody + "áramos",
+                    verbBody + "aram"});
 
-            //Future Subjunctive
-            toReturn[16] = verbBody + "ar";
-            toReturn[17] = verbBody + "ar";
-            toReturn[18] = verbBody + "armos";
-            toReturn[19] = verbBody + "arem";
+            //5 Perfect Past Compound
+            toReturn.add(new String[]{"Indicativo Pretérito Composto","Perfect Past Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
 
-            //Present Participle
-            toReturn[20] = verbBody + "ando";
-            toReturn[21] = verbBody + "ando";
-            toReturn[22] = verbBody + "ando";
-            toReturn[23] = verbBody + "ando";
+            //6 MoreThanPerfect Past Compound
+            toReturn.add(new String[]{"Indicativo Pretérito Mais-Que-Perfeito Composto","More-Than-Perfect Past Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
 
-            //Imperitive
-            toReturn[24] = verbBody + "e";
-            toReturn[25] = verbBody + "em";
+            //7 Past More Than Perfect Past
+            toReturn.add(new String[]{"Indicativo Pretérito Mais-Que-Perfeito Anterior","Past More-Than-Perfect Past",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
 
-            //Future Subjunctive
-            toReturn[26] = verbBody + "arei";
-            toReturn[27] = verbBody + "ará";
-            toReturn[28] = verbBody + "aremos";
-            toReturn[29] = verbBody + "arão";
+            //8 Simple Future
+            toReturn.add(new String[]{"Indicativo Futuro Do Presente Simples","Simple Future",
+                    verbBody + "arei",
+                    verbBody + "ará",
+                    verbBody + "aremos",
+                    verbBody + "arão"});
 
+            //9 Future present compound
+            toReturn.add(new String[]{"Indicativo Futuro Do Presente Composto","Future Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //10 Conjunctive/Subjunctive Present
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Presente","Conjunctive/Subjunctive Present",
+                    verbBody + "ue",
+                    verbBody + "ue",
+                    verbBody + "uemos",
+                    verbBody + "uem"});
+
+            //11 Conjuctive/Subjuntive Perfect Past
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Pretérito Perfeito","Conjunctive / Subjunctive Past Present",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //12 Conjunctive/Subjunctive Imperfect Past
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Pretérito Imperfeito","Conjunctive/Subjunctive Imperfect Past",
+                    verbBody + "asse",
+                    verbBody + "asse",
+                    verbBody + "ássemos",
+                    verbBody + "assem"});
+
+
+            //13 Conjunctive/Subjunctive More-than-perfect Compound
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Pretérito Mais-Que-Perfeito Composto","Conjunctive/Subjunctive More-Than-Perfect Past Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //14 Conjunctive/Subjunctive Future
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Futuro","Conjunctive/Subjunctive Future",
+                    verbBody + "ar",
+                    verbBody + "ar",
+                    verbBody + "armos",
+                    verbBody + "arem"});
+
+            //15 Conjunctive/Subjunctive Future Compound
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Futuro","Conjunctive/Subjunctive Future",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //16 Conditional Future Simple
+            toReturn.add(new String[]{"Condicional Futuro Do Pretérito Simples","Conditional Future Simple",
+                    verbBody + "aria",
+                    verbBody + "aria",
+                    verbBody + "aríamos",
+                    verbBody + "ariam"});
+
+
+            //17 Conditional Future Of Past Compound
+            toReturn.add(new String[]{"Condicional Futuro Do Pretérito Composto","Conditional Future Of Past Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //18 Imperative
+            toReturn.add(new String[]{"Imperativo","Imperative",
+                    verbBody + "a",
+                    verbBody + "ue",
+                    verbBody + "uemos",
+                    verbBody + "uem"});
+
+            //19 Negative Imperative
+            toReturn.add(new String[]{"Imperativo Negativo","Negative Imperative",
+                    verbBody + "ues",
+                    verbBody + "ue",
+                    verbBody + "uemos",
+                    verbBody + "uem"});
         }
 
-        if(verbType.matches("(?i)er")){
-            //Present
-            toReturn[0] = verbBody + "o";
-            toReturn[1] = verbBody + "e";
-            toReturn[2] = verbBody + "emos";
-            toReturn[3] = verbBody + "em";
+        //TODO Change er and ir rules
 
-            //Perfect past
-            toReturn[4] = verbBody + "i";
-            toReturn[5] = verbBody + "eu";
-            toReturn[6] = verbBody + "emos";
-            toReturn[7] = verbBody + "eram";
+        if(verbType.matches("(?i)er")) {
 
-            //Imperfect Past
-            toReturn[8] = verbBody + "ia";
-            toReturn[9] = verbBody + "ia";
-            toReturn[10] = verbBody + "íamos";
-            toReturn[11] = verbBody + "iam";
+            //1 Present
+            toReturn.add(new String[]{"Indicativo Presente", "Present",
+                    verbBody + "o",
+                    verbBody + "a",
+                    verbBody + "amos",
+                    verbBody + "am"});
 
-            //Conditional
-            toReturn[12] = verbBody + "eria";
-            toReturn[13] = verbBody + "eria";
-            toReturn[14] = verbBody + "eríamos";
-            toReturn[15] = verbBody + "eriam";
+            //2 Perfect past
+            if (String.valueOf(verbBody.charAt(verbBody.length() - 1)).matches("(?i)g")) {
+                verbRule = verbBody + "uei";
+            } else if (String.valueOf(verbBody.charAt(verbBody.length() - 1)).matches("(?i)c")) {
+                verbRule = verbBody.substring(0, verbBody.length() - 1) + "quei";
+            } else {
+                verbRule = verbBody + "ei";
+            }
 
-            //Future Subjunctive
-            toReturn[16] = verbBody + "er";
-            toReturn[17] = verbBody + "er";
-            toReturn[18] = verbBody + "ermos";
-            toReturn[19] = verbBody + "erem";
+            toReturn.add(new String[]{"Indicativo Pretérito Perfeito", "Perfect Past",
+                    verbRule,
+                    verbBody + "ou",
+                    verbBody + "amos",
+                    verbBody + "aram"});
 
-            //Present Participle
-            toReturn[20] = verbBody + "endo";
-            toReturn[21] = verbBody + "endo";
-            toReturn[22] = verbBody + "endo";
-            toReturn[23] = verbBody + "endo";
+            //3 Imperfect Past
+            toReturn.add(new String[]{"Indicativo Pretérito Imperfeito", "Imperfect Past",
+                    verbBody + "ava",
+                    verbBody + "ava",
+                    verbBody + "ávamos",
+                    verbBody + "avam"});
 
-            //Imperitive
-            toReturn[24] = verbBody + "a";
-            toReturn[25] = verbBody + "am";
+            //4 More than perfect past
+            toReturn.add(new String[]{"Indicativo Pretérito Mais-Que-Perfeito", "More-Than-Perfect Past",
+                    verbBody + "ara",
+                    verbBody + "ara",
+                    verbBody + "áramos",
+                    verbBody + "aram"});
 
-            //Future Subjunctive
-            toReturn[26] = verbBody + "erei";
-            toReturn[27] = verbBody + "erá";
-            toReturn[28] = verbBody + "eremos";
-            toReturn[29] = verbBody + "erão";
+            //5 Perfect Past Compound
+            toReturn.add(new String[]{"Indicativo Pretérito Composto", "Perfect Past Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //6 Perfect Past Compound
+            toReturn.add(new String[]{"Indicativo Pretérito Mais-Que-Perfeito Composto", "More-Than-Perfect Past Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //7 Perfect Past Compound
+            toReturn.add(new String[]{"Indicativo Pretérito Mais-Que-Perfeito Anterior", "Past More-Than-Perfect Past",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //8 Simple Future
+            toReturn.add(new String[]{"Indicativo Futuro Do Presente Simples", "Simple Future",
+                    verbBody + "arei",
+                    verbBody + "ará",
+                    verbBody + "aremos",
+                    verbBody + "arão"});
+
+            //9 Future present compound
+            toReturn.add(new String[]{"Indicativo Futuro Do Presente Composto", "Future Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //10 Conjunctive/Subjunctive Present
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Presente", "Conjunctive/Subjunctive Present",
+                    verbBody + "ue",
+                    verbBody + "ue",
+                    verbBody + "uemos",
+                    verbBody + "uem"});
+
+            //11 Conjuctive/Subjuntive Perfect Past
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Pretérito Perfeito", "Conjunctive / Subjunctive Past Present",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //12 Conjunctive/Subjunctive Imperfect Past
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Pretérito Imperfeito", "Conjunctive/Subjunctive Imperfect Past",
+                    verbBody + "asse",
+                    verbBody + "asse",
+                    verbBody + "ássemos",
+                    verbBody + "assem"});
 
 
+            //13 Conjunctive/Subjunctive More-than-perfect Compound
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Pretérito Mais-Que-Perfeito Composto", "Conjunctive/Subjunctive More-Than-Perfect Past Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //14 Conjunctive/Subjunctive Future
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Futuro", "Conjunctive/Subjunctive Future",
+                    verbBody + "ar",
+                    verbBody + "ar",
+                    verbBody + "armos",
+                    verbBody + "arem"});
+
+            //15 Conjunctive/Subjunctive Future Compound
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Futuro", "Conjunctive/Subjunctive Future",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //16 Conditional Future Simple
+            toReturn.add(new String[]{"Condicional Futuro Do Pretérito Simples", "Conditional Future Simple",
+                    verbBody + "aria",
+                    verbBody + "aria",
+                    verbBody + "aríamos",
+                    verbBody + "ariam"});
+
+
+            //17 Conditional Future Of Perfect Compound
+            toReturn.add(new String[]{"Condicional Futuro Do Pretérito Composto", "Conditional Future Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //18 Imperative
+            toReturn.add(new String[]{"Imperativo", "Imperative",
+                    verbBody + "a",
+                    verbBody + "ue",
+                    verbBody + "uemos",
+                    verbBody + "uem"});
+
+            //19 Negative Imperative
+            toReturn.add(new String[]{"Imperativo Negativo", "Negative Imperative",
+                    verbBody + "ues",
+                    verbBody + "ue",
+                    verbBody + "uemos",
+                    verbBody + "uem"});
         }
 
         if(verbType.matches("(?i)ir")){
 
-            //Present
-            if(String.valueOf(verbBody.charAt(1)).matches("(?i)o"))
+
+            //1 Present
+            toReturn.add(new String[]{"Indicativo Presente", "Present",
+                    verbBody + "o",
+                    verbBody + "a",
+                    verbBody + "amos",
+                    verbBody + "am"});
+
+            //2 Perfect past
+            if(String.valueOf(verbBody.charAt(verbBody.length() - 1)).matches("(?i)g"))
             {
-                StringBuilder newVerbBody = new StringBuilder(verbBody);
-                newVerbBody.setCharAt(1, 'u');
-                toReturn[0] = newVerbBody + "o";
+                verbRule = verbBody + "uei";
             }
-            else
+            else if(String.valueOf(verbBody.charAt(verbBody.length() - 1)).matches("(?i)c"))
             {
-                toReturn[0] = verbBody + "o";
+                verbRule = verbBody.substring(0,verbBody.length()-1) + "quei";
+            }
+            else{
+                verbRule = verbBody + "ei";
             }
 
-            toReturn[1] = verbBody + "e";
-            toReturn[2] = verbBody + "imos";
-            toReturn[3] = verbBody + "em";
+            toReturn.add(new String[]{"Indicativo Pretérito Perfeito","Perfect Past",
+                    verbRule,
+                    verbBody + "ou",
+                    verbBody + "amos",
+                    verbBody + "aram"});
 
-            //Perfect past
-            toReturn[4] = verbBody + "i";
-            toReturn[5] = verbBody + "iu";
-            toReturn[6] = verbBody + "imos";
-            toReturn[7] = verbBody + "iram";
+            //3 Imperfect Past
+            toReturn.add(new String[]{"Indicativo Pretérito Imperfeito","Imperfect Past",
+                    verbBody + "ava",
+                    verbBody + "ava",
+                    verbBody + "ávamos",
+                    verbBody + "avam"});
 
-            //Imperfect Past
-            toReturn[8] = verbBody + "ia";
-            toReturn[9] = verbBody + "ia";
-            toReturn[10] = verbBody + "íamos";
-            toReturn[11] = verbBody + "iam";
+            //4 More than perfect past
+            toReturn.add(new String[]{"Indicativo Pretérito Mais-Que-Perfeito","More-Than-Perfect Past",
+                    verbBody + "ara",
+                    verbBody + "ara",
+                    verbBody + "áramos",
+                    verbBody + "aram"});
 
-            //Conditional
-            toReturn[12] = verbBody + "iria";
-            toReturn[13] = verbBody + "iria";
-            toReturn[14] = verbBody + "iríamos";
-            toReturn[15] = verbBody + "iriam";
+            //5 Perfect Past Compound
+            toReturn.add(new String[]{"Indicativo Pretérito Composto","Perfect Past Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
 
-            //Future Subjunctive
-            toReturn[16] = verbBody + "ir";
-            toReturn[17] = verbBody + "ir";
-            toReturn[18] = verbBody + "irmos";
-            toReturn[19] = verbBody + "irem";
+            //6 Perfect Past Compound
+            toReturn.add(new String[]{"Indicativo Pretérito Mais-Que-Perfeito Composto","More-Than-Perfect Past Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
 
-            //Present Participle
-            toReturn[20] = verbBody + "indo";
-            toReturn[21] = verbBody + "indo";
-            toReturn[22] = verbBody + "indo";
-            toReturn[23] = verbBody + "indo";
+            //7 Perfect Past Compound
+            toReturn.add(new String[]{"Indicativo Pretérito Mais-Que-Perfeito Anterior","Past More-Than-Perfect Past",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
 
-            //Imperitive
-            toReturn[24] = verbBody + "a";
-            toReturn[25] = verbBody + "am";
+            //8 Simple Future
+            toReturn.add(new String[]{"Indicativo Futuro Do Presente Simples","Simple Future",
+                    verbBody + "arei",
+                    verbBody + "ará",
+                    verbBody + "aremos",
+                    verbBody + "arão"});
 
-            //Future Subjunctive
-            toReturn[26] = verbBody + "irei";
-            toReturn[27] = verbBody + "irá";
-            toReturn[28] = verbBody + "iremos";
-            toReturn[29] = verbBody + "irão";
+            //9 Future present compound
+            toReturn.add(new String[]{"Indicativo Futuro Do Presente Composto","Future Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //10 Conjunctive/Subjunctive Present
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Presente","Conjunctive/Subjunctive Present",
+                    verbBody + "ue",
+                    verbBody + "ue",
+                    verbBody + "uemos",
+                    verbBody + "uem"});
+
+            //11 Conjuctive/Subjuntive Perfect Past
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Pretérito Perfeito","Conjunctive / Subjunctive Past Present",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //12 Conjunctive/Subjunctive Imperfect Past
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Pretérito Imperfeito","Conjunctive/Subjunctive Imperfect Past",
+                    verbBody + "asse",
+                    verbBody + "asse",
+                    verbBody + "ássemos",
+                    verbBody + "assem"});
+
+
+            //13 Conjunctive/Subjunctive More-than-perfect Compound
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Pretérito Mais-Que-Perfeito Composto","Conjunctive/Subjunctive More-Than-Perfect Past Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //14 Conjunctive/Subjunctive Future
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Futuro","Conjunctive/Subjunctive Future",
+                    verbBody + "ar",
+                    verbBody + "ar",
+                    verbBody + "armos",
+                    verbBody + "arem"});
+
+            //15 Conjunctive/Subjunctive Future Compound
+            toReturn.add(new String[]{"Conjuntivo/Subjuntivo Futuro","Conjunctive/Subjunctive Future",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //16 Conditional Future Simple
+            toReturn.add(new String[]{"Condicional Futuro Do Pretérito Simples","Conditional Future Simple",
+                    verbBody + "aria",
+                    verbBody + "aria",
+                    verbBody + "aríamos",
+                    verbBody + "ariam"});
+
+
+            //17 Conditional Future Of Perfect Compound
+            toReturn.add(new String[]{"Condicional Futuro Do Pretérito Composto","Conditional Future Compound",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado",
+                    verbBody + "ado"});
+
+            //18 Imperative
+            toReturn.add(new String[]{"Imperativo","Imperative",
+                    verbBody + "a",
+                    verbBody + "ue",
+                    verbBody + "uemos",
+                    verbBody + "uem"});
+
+            //19 Negative Imperative
+            toReturn.add(new String[]{"Imperativo Negativo","Negative Imperative",
+                    verbBody + "ues",
+                    verbBody + "ue",
+                    verbBody + "uemos",
+                    verbBody + "uem"});
 
         }
-
-
-
 
         return toReturn;
     }

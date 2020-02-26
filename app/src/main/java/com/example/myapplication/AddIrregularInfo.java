@@ -152,67 +152,67 @@ public class AddIrregularInfo extends Fragment {
             title.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPorVerb());
             subTitle.setText(((MainActivity)getActivity()).verbList.get(mPosition).getEngVerb());
 
-            eu_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_eu());
-            ele_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_ele());
-            nos_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_nos());
-            eles_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_eles());
-
-            eu_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_eu());
-            ele_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_ele());
-            nos_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_nos());
-            eles_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_eles());
-
-            eu_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_eu());
-            ele_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_ele());
-            nos_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_nos());
-            eles_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_eles());
-
-            eu_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_eu());
-            ele_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_ele());
-            nos_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_nos());
-            eles_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_eles());
-
-            eu_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_eu());
-            ele_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_ele());
-            nos_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_nos());
-            eles_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_eles());
-
-            eu_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_eu());
-            ele_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_ele());
-            nos_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_nos());
-            eles_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_eles());
-
-            ele_imperative_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperitive_ele());
-            eles_imperative_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperitive_eles());
-
-            eu_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_eu());
-            ele_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_ele());
-            nos_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_nos());
-            eles_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_eles());
+//            eu_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_eu());
+//            ele_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_ele());
+//            nos_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_nos());
+//            eles_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_eles());
+//
+//            eu_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_eu());
+//            ele_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_ele());
+//            nos_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_nos());
+//            eles_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_eles());
+//
+//            eu_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_eu());
+//            ele_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_ele());
+//            nos_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_nos());
+//            eles_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_eles());
+//
+//            eu_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_eu());
+//            ele_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_ele());
+//            nos_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_nos());
+//            eles_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_eles());
+//
+//            eu_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_eu());
+//            ele_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_ele());
+//            nos_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_nos());
+//            eles_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_eles());
+//
+//            eu_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_eu());
+//            ele_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_ele());
+//            nos_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_nos());
+//            eles_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_eles());
+//
+//            ele_imperative_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperitive_ele());
+//            eles_imperative_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperitive_eles());
+//
+//            eu_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_eu());
+//            ele_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_ele());
+//            nos_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_nos());
+//            eles_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_eles());
 
             saveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    Verb updatedVerb = new Verb(ID,title.getText().toString(),subTitle.getText().toString(),false,
-                            eu_present_edit.getText().toString(), ele_present_edit.getText().toString(),
-                            nos_present_edit.getText().toString(),eles_present_edit.getText().toString(),
-                            eu_simplePast_edit.getText().toString(),ele_simplePast_edit.getText().toString(),
-                            nos_simplePast_edit.getText().toString(), eles_simplePast_edit.getText().toString(),
-                            eu_imperfectPast_edit.getText().toString(),ele_imperfectPast_edit.getText().toString(),
-                            nos_imperfectPast_edit.getText().toString(),eles_imperfectPast_edit.getText().toString(),
-                            eu_conditional_edit.getText().toString(), ele_conditional_edit.getText().toString(),
-                            nos_conditional_edit.getText().toString(), eles_conditional_edit.getText().toString(),
-                            eu_futureSub_edit.getText().toString(), ele_futureSub_edit.getText().toString(),
-                            nos_futureSub_edit.getText().toString(), eles_futureSub_edit.getText().toString(),
-                            eu_gerund_edit.getText().toString(), ele_gerund_edit.getText().toString(),
-                            nos_gerund_edit.getText().toString(), eles_gerund_edit.getText().toString(),
-                            ele_imperative_edit.getText().toString(), eles_imperative_edit.getText().toString(),
-                            eu_simpleFuture_edit.getText().toString(), ele_simpleFuture_edit.getText().toString(),
-                            nos_simpleFuture_edit.getText().toString(), eles_simpleFuture_edit.getText().toString()
-                            );
+//                    Verb updatedVerb = new Verb(ID,title.getText().toString(),subTitle.getText().toString(),false,
+//                            eu_present_edit.getText().toString(), ele_present_edit.getText().toString(),
+//                            nos_present_edit.getText().toString(),eles_present_edit.getText().toString(),
+//                            eu_simplePast_edit.getText().toString(),ele_simplePast_edit.getText().toString(),
+//                            nos_simplePast_edit.getText().toString(), eles_simplePast_edit.getText().toString(),
+//                            eu_imperfectPast_edit.getText().toString(),ele_imperfectPast_edit.getText().toString(),
+//                            nos_imperfectPast_edit.getText().toString(),eles_imperfectPast_edit.getText().toString(),
+//                            eu_conditional_edit.getText().toString(), ele_conditional_edit.getText().toString(),
+//                            nos_conditional_edit.getText().toString(), eles_conditional_edit.getText().toString(),
+//                            eu_futureSub_edit.getText().toString(), ele_futureSub_edit.getText().toString(),
+//                            nos_futureSub_edit.getText().toString(), eles_futureSub_edit.getText().toString(),
+//                            eu_gerund_edit.getText().toString(), ele_gerund_edit.getText().toString(),
+//                            nos_gerund_edit.getText().toString(), eles_gerund_edit.getText().toString(),
+//                            ele_imperative_edit.getText().toString(), eles_imperative_edit.getText().toString(),
+//                            eu_simpleFuture_edit.getText().toString(), ele_simpleFuture_edit.getText().toString(),
+//                            nos_simpleFuture_edit.getText().toString(), eles_simpleFuture_edit.getText().toString()
+//                            );
 
-                    MainActivity.myAppDatabase.myDao().updateVerb(updatedVerb);
+//                    MainActivity.myAppDatabase.myDao().updateVerb(updatedVerb);
                     MainActivity.adapter.notifyDataSetChanged();
                     ((MainActivity)getActivity()).updateRecyclerView();
 
@@ -254,25 +254,25 @@ public class AddIrregularInfo extends Fragment {
                     }
                     else
                     {
-                        Verb newVerb = new Verb(title.getText().toString(),subTitle.getText().toString(),false,
-                                eu_present_edit.getText().toString(), ele_present_edit.getText().toString(),
-                                nos_present_edit.getText().toString(),eles_present_edit.getText().toString(),
-                                eu_simplePast_edit.getText().toString(),ele_simplePast_edit.getText().toString(),
-                                nos_simplePast_edit.getText().toString(), eles_simplePast_edit.getText().toString(),
-                                eu_imperfectPast_edit.getText().toString(),ele_imperfectPast_edit.getText().toString(),
-                                nos_imperfectPast_edit.getText().toString(),eles_imperfectPast_edit.getText().toString(),
-                                eu_conditional_edit.getText().toString(), ele_conditional_edit.getText().toString(),
-                                nos_conditional_edit.getText().toString(), eles_conditional_edit.getText().toString(),
-                                eu_futureSub_edit.getText().toString(), ele_futureSub_edit.getText().toString(),
-                                nos_futureSub_edit.getText().toString(), eles_futureSub_edit.getText().toString(),
-                                eu_gerund_edit.getText().toString(), ele_gerund_edit.getText().toString(),
-                                nos_gerund_edit.getText().toString(), eles_gerund_edit.getText().toString(),
-                                ele_imperative_edit.getText().toString(), eles_imperative_edit.getText().toString(),
-                                eu_simpleFuture_edit.getText().toString(), ele_simpleFuture_edit.getText().toString(),
-                                nos_simpleFuture_edit.getText().toString(), eles_simpleFuture_edit.getText().toString()
-                        );
+//                        Verb newVerb = new Verb(title.getText().toString(),subTitle.getText().toString(),false,
+//                                eu_present_edit.getText().toString(), ele_present_edit.getText().toString(),
+//                                nos_present_edit.getText().toString(),eles_present_edit.getText().toString(),
+//                                eu_simplePast_edit.getText().toString(),ele_simplePast_edit.getText().toString(),
+//                                nos_simplePast_edit.getText().toString(), eles_simplePast_edit.getText().toString(),
+//                                eu_imperfectPast_edit.getText().toString(),ele_imperfectPast_edit.getText().toString(),
+//                                nos_imperfectPast_edit.getText().toString(),eles_imperfectPast_edit.getText().toString(),
+//                                eu_conditional_edit.getText().toString(), ele_conditional_edit.getText().toString(),
+//                                nos_conditional_edit.getText().toString(), eles_conditional_edit.getText().toString(),
+//                                eu_futureSub_edit.getText().toString(), ele_futureSub_edit.getText().toString(),
+//                                nos_futureSub_edit.getText().toString(), eles_futureSub_edit.getText().toString(),
+//                                eu_gerund_edit.getText().toString(), ele_gerund_edit.getText().toString(),
+//                                nos_gerund_edit.getText().toString(), eles_gerund_edit.getText().toString(),
+//                                ele_imperative_edit.getText().toString(), eles_imperative_edit.getText().toString(),
+//                                eu_simpleFuture_edit.getText().toString(), ele_simpleFuture_edit.getText().toString(),
+//                                nos_simpleFuture_edit.getText().toString(), eles_simpleFuture_edit.getText().toString()
+//                        );
 
-                        MainActivity.myAppDatabase.myDao().addVerb(newVerb);
+//                        MainActivity.myAppDatabase.myDao().addVerb(newVerb);
                         MainActivity.adapter.notifyDataSetChanged();
 
                         ((MainActivity)getActivity()).verbList = MainActivity.myAppDatabase.myDao().getVerbs();

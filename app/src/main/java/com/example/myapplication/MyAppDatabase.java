@@ -7,11 +7,13 @@ import android.content.Context;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.Executors;
 
 @Database(entities = {Verb.class},version = 1,exportSchema = false)
+@TypeConverters({Converters.class})
 public abstract class MyAppDatabase extends RoomDatabase {
 
     public abstract MyDao myDao();
