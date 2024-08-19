@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Debug;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,6 +34,7 @@ public class DisplayVerbInfo extends Fragment {
 
     }
 
+    //TODO Make more modular
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -135,43 +137,54 @@ public class DisplayVerbInfo extends Fragment {
         ((MainActivity)getActivity()).setClickPosition(mClickPosition);
 
         //region Set all text boxes
-        eu_present.setText("Eu " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPresent_eu().toLowerCase());
-        ele_present.setText("Você/Ele/Ela " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPresent_ele().toLowerCase());
-        nos_present.setText("Nós " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPresent_nos().toLowerCase());
-        eles_present.setText("Vocês/Eles/Elas " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPresent_eles().toLowerCase());
 
-        eu_simplePast.setText("Eu " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPerfectpast_eu().toLowerCase());
-        ele_simplePast.setText("Você/Ele/Ela " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPerfectpast_ele().toLowerCase());
-        nos_simplePast.setText("Nós " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPerfectpast_nos().toLowerCase());
-        eles_simplePast.setText("Vocês/Eles/Elas " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPerfectpast_eles().toLowerCase());
+        Verb clickPosition = ((MainActivity)getActivity()).verbList.get(mClickPosition);
 
-        eu_imperfectPast.setText("Eu " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getImperfectpast_eu().toLowerCase());
-        ele_imperfectPast.setText("Você/Ele/Ela " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getImperfectpast_ele().toLowerCase());
-        nos_imperfectPast.setText("Nós " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getImperfectpast_nos().toLowerCase());
-        eles_imperfectPast.setText("Vocês/Eles/Elas " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getImperfectpast_eles().toLowerCase());
+        Tense preset = clickPosition.getPresent();
+        eu_present.setText("Eu " + preset.Eu.toLowerCase());
+        ele_present.setText("Você/Ele/Ela " + preset.Ele.toLowerCase());
+        nos_present.setText("Nós " + preset.Nos.toLowerCase());
+        eles_present.setText("Vocês/Eles/Elas " + preset.Eles.toLowerCase());
 
-        eu_conditional.setText("Eu " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getConditional_eu().toLowerCase());
-        ele_conditional.setText("Você/Ele/Ela " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getConditional_ele().toLowerCase());
-        nos_conditional.setText("Nós " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getConditional_nos().toLowerCase());
-        eles_conditional.setText("Vocês/Eles/Elas " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getConditional_eles().toLowerCase());
+        Tense simplePast = clickPosition.getPerfectPast();
+        eu_simplePast.setText("Eu " + simplePast.Eu.toLowerCase());
+        ele_simplePast.setText("Você/Ele/Ela " +  simplePast.Ele.toLowerCase());
+        nos_simplePast.setText("Nós " +  simplePast.Nos.toLowerCase());
+        eles_simplePast.setText("Vocês/Eles/Elas " +  simplePast.Eles.toLowerCase());
 
-        eu_futureSub.setText("Se/Quando eu " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getFutureSub_eu().toLowerCase());
-        ele_futureSub.setText("Se/Quando você/ele/ela " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getFutureSub_ele().toLowerCase());
-        nos_futureSub.setText("Se/Quando nós " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getFutureSub_nos().toLowerCase());
-        eles_futureSub.setText("Se/Quando vocês/eles/elas " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getFutureSub_eles().toLowerCase());
+        Tense imperfectPast = clickPosition.getImperfectPerfectPast();
+        eu_imperfectPast.setText("Eu " + imperfectPast.Eu.toLowerCase());
+        ele_imperfectPast.setText("Você/Ele/Ela " + imperfectPast.Ele.toLowerCase());
+        nos_imperfectPast.setText("Nós " + imperfectPast.Nos.toLowerCase());
+        eles_imperfectPast.setText("Vocês/Eles/Elas " + imperfectPast.Eles.toLowerCase());
 
-        eu_gerund.setText("Eu estou " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPresentPart_eu().toLowerCase());
-        ele_gerund.setText("Você/Ele/Ela está " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPresentPart_ele().toLowerCase());
-        nos_gerund.setText("Nós estamos " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPresentPart_nos().toLowerCase());
-        eles_gerund.setText("Vocês/Eles/Elas estão " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getPresentPart_eles().toLowerCase());
+        Tense conditional = clickPosition.getConditional();
+        eu_conditional.setText("Eu " + conditional.Eu.toLowerCase());
+        ele_conditional.setText("Você/Ele/Ela " + conditional.Ele.toLowerCase());
+        nos_conditional.setText("Nós " + conditional.Nos.toLowerCase());
+        eles_conditional.setText("Vocês/Eles/Elas " + conditional.Eles.toLowerCase());
 
-        ele_imperative.setText("Ele " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getImperitive_ele().toLowerCase());
-        eles_imperative.setText("Eles " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getImperitive_eles().toLowerCase());
+        Tense futureSub = clickPosition.getFutureSubjunctive();
+        eu_futureSub.setText("Se/Quando eu " + futureSub.Eu.toLowerCase());
+        ele_futureSub.setText("Se/Quando você/ele/ela " + futureSub.Ele.toLowerCase());
+        nos_futureSub.setText("Se/Quando nós " + futureSub.Nos.toLowerCase());
+        eles_futureSub.setText("Se/Quando vocês/eles/elas " + futureSub.Eles.toLowerCase());
 
-        eu_simpleFuture.setText("Eu (vou) " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getFuture_eu().toLowerCase());
-        ele_simpleFuture.setText("Você/Ele/Ela (vai) " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getFuture_ele().toLowerCase());
-        nos_simpleFuture.setText("Nós (vamos) " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getFuture_nos().toLowerCase());
-        eles_simpleFuture.setText("Vocês/Eles/Elas (vão) " + ((MainActivity)getActivity()).verbList.get(mClickPosition).getFuture_eles().toLowerCase());
+        Tense gerund = clickPosition.getPresentParticiple();
+        eu_gerund.setText("Eu estou " + gerund.Eu.toLowerCase());
+        ele_gerund.setText("Você/Ele/Ela está " + gerund.Ele.toLowerCase());
+        nos_gerund.setText("Nós estamos " + gerund.Nos.toLowerCase());
+        eles_gerund.setText("Vocês/Eles/Elas estão " + gerund.Eles.toLowerCase());
+
+        Tense imperative = clickPosition.getImperative();
+        ele_imperative.setText("Ele " + imperative.Ele.toLowerCase());
+        eles_imperative.setText("Eles " + imperative.Eles.toLowerCase());
+
+        Tense simpleFuture = clickPosition.getSimpleFuture();
+        eu_simpleFuture.setText("Eu (vou) " + simpleFuture.Eu.toLowerCase());
+        ele_simpleFuture.setText("Você/Ele/Ela (vai) " + simpleFuture.Ele.toLowerCase());
+        nos_simpleFuture.setText("Nós (vamos) " + simpleFuture.Nos.toLowerCase());
+        eles_simpleFuture.setText("Vocês/Eles/Elas (vão) " + simpleFuture.Eles.toLowerCase());
 
         //endregion Set all text boxes
 

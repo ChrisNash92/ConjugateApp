@@ -99,7 +99,7 @@ public class AddVerbFragment extends Fragment implements View.OnClickListener {
                 } else {
 
                     if (rbRegular.isChecked()) {
-                        Verb verb = new Verb(porverb.substring(0, 1).toUpperCase() + porverb.substring(1).toLowerCase(), engverb, false);
+                        Verb verb = new Verb(String.join("", porverb.substring(0, 1).toUpperCase(), porverb.substring(1).toLowerCase()), engverb, false);
                         MainActivity.myAppDatabase.myDao().addVerb(verb);
                         Toast.makeText(getActivity(), "Verb added successfully", Toast.LENGTH_SHORT).show();
                         porVerb.setText("");
@@ -122,7 +122,8 @@ public class AddVerbFragment extends Fragment implements View.OnClickListener {
     private void onRadioButtonClicked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
+        //TODO figure if this does anything?
+       /* // Check which radio button was clicked
         switch (view.getId()) {
             case R.id.radio_irregular:
                 if (checked)
@@ -132,7 +133,7 @@ public class AddVerbFragment extends Fragment implements View.OnClickListener {
                     break;
             default:
                 break;
-        }
+        } */
     }
 
     @Override

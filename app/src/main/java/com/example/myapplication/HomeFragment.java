@@ -56,38 +56,38 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        switch (view.getId())
+
+
+        if(view.getId() == R.id.goToListBn)
         {
-            case R.id.goToListBn:
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new ListFragment()).addToBackStack(null).commit();
-                break;
-
-            case R.id.goToAddVerbBn:
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddVerbFragment()).addToBackStack(null).commit();
-                break;
-
-            case R.id.resetBn:
-                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        switch (which){
-                            case DialogInterface.BUTTON_POSITIVE:
-                                MainActivity.myAppDatabase.myDao().clearAll();
-                                MainActivity.myAppDatabase.myDao().insertAllVerbs(Verb.preloadVerbs());
-                                ((MainActivity)getActivity()).verbList = MainActivity.myAppDatabase.myDao().getVerbs();
-                                break;
-
-                            case DialogInterface.BUTTON_NEGATIVE:
-                                //No button clicked
-                                break;
-                        }
-                    }
-                };
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                builder.setMessage("Are you sure you want to reset the database?").setPositiveButton("Yes", dialogClickListener)
-                        .setNegativeButton("No", dialogClickListener).show();
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new ListFragment()).addToBackStack(null).commit();
         }
+        else if(view.getId() == R.id.goToAddVerbBn)
+        {
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddVerbFragment()).addToBackStack(null).commit();
+        }
+        else if(view.getId() == R.id.resetBn)
+        {
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch (which){
+                        case DialogInterface.BUTTON_POSITIVE:
+                            MainActivity.myAppDatabase.myDao().clearAll();
+                            MainActivity.myAppDatabase.myDao().insertAllVerbs(Verb.preloadVerbs());
+                            ((MainActivity)getActivity()).verbList = MainActivity.myAppDatabase.myDao().getVerbs();
+                            break;
 
+                        case DialogInterface.BUTTON_NEGATIVE:
+                            //No button clicked
+                            break;
+                    }
+                }
+            };
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+            builder.setMessage("Are you sure you want to reset the database?").setPositiveButton("Yes", dialogClickListener)
+                    .setNegativeButton("No", dialogClickListener).show();
+        }
     }
 }

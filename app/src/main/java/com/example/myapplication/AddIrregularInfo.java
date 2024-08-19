@@ -152,49 +152,58 @@ public class AddIrregularInfo extends Fragment {
             title.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPorVerb());
             subTitle.setText(((MainActivity)getActivity()).verbList.get(mPosition).getEngVerb());
 
-            eu_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_eu());
-            ele_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_ele());
-            nos_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_nos());
-            eles_present_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresent_eles());
+            Tense present = ((MainActivity)getActivity()).verbList.get(mPosition).getPresent();
+            eu_present_edit.setText(present.Eu);
+            ele_present_edit.setText(present.Ele);
+            nos_present_edit.setText(present.Nos);
+            eles_present_edit.setText(present.Eles);
 
-            eu_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_eu());
-            ele_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_ele());
-            nos_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_nos());
-            eles_simplePast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPerfectpast_eles());
+            Tense perfectPast = ((MainActivity)getActivity()).verbList.get(mPosition).getPerfectPast();
+            eu_simplePast_edit.setText(perfectPast.Eu);
+            ele_simplePast_edit.setText(perfectPast.Ele);
+            nos_simplePast_edit.setText(perfectPast.Nos);
+            eles_simplePast_edit.setText(perfectPast.Eles);
 
-            eu_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_eu());
-            ele_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_ele());
-            nos_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_nos());
-            eles_imperfectPast_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperfectpast_eles());
+            Tense imperfectPast = ((MainActivity)getActivity()).verbList.get(mPosition).getImperfectPerfectPast();
+            eu_imperfectPast_edit.setText(imperfectPast.Eu);
+            ele_imperfectPast_edit.setText(imperfectPast.Ele);
+            nos_imperfectPast_edit.setText(imperfectPast.Nos);
+            eles_imperfectPast_edit.setText(imperfectPast.Eles);
 
-            eu_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_eu());
-            ele_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_ele());
-            nos_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_nos());
-            eles_conditional_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getConditional_eles());
+            Tense conditional = ((MainActivity)getActivity()).verbList.get(mPosition).getConditional();
+            eu_conditional_edit.setText(conditional.Eu);
+            ele_conditional_edit.setText(conditional.Ele);
+            nos_conditional_edit.setText(conditional.Nos);
+            eles_conditional_edit.setText(conditional.Eles);
 
-            eu_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_eu());
-            ele_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_ele());
-            nos_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_nos());
-            eles_futureSub_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFutureSub_eles());
+            Tense futureSub = ((MainActivity)getActivity()).verbList.get(mPosition).getFutureSubjunctive();
+            eu_futureSub_edit.setText(futureSub.Eu);
+            ele_futureSub_edit.setText(futureSub.Ele);
+            nos_futureSub_edit.setText(futureSub.Nos);
+            eles_futureSub_edit.setText(futureSub.Eles);
 
-            eu_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_eu());
-            ele_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_ele());
-            nos_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_nos());
-            eles_gerund_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getPresentPart_eles());
+            Tense presentParticiple = ((MainActivity)getActivity()).verbList.get(mPosition).getPresentParticiple();
+            eu_gerund_edit.setText(presentParticiple.Eu);
+            ele_gerund_edit.setText(presentParticiple.Ele);
+            nos_gerund_edit.setText(presentParticiple.Nos);
+            eles_gerund_edit.setText(presentParticiple.Eles);
 
-            ele_imperative_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperitive_ele());
-            eles_imperative_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getImperitive_eles());
+            //TODO Add Nos
+            Tense imperative = ((MainActivity)getActivity()).verbList.get(mPosition).getImperative();
+            ele_imperative_edit.setText(imperative.Ele);
+            eles_imperative_edit.setText(imperative.Eles);
 
-            eu_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_eu());
-            ele_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_ele());
-            nos_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_nos());
-            eles_simpleFuture_edit.setText(((MainActivity)getActivity()).verbList.get(mPosition).getFuture_eles());
+            Tense simpleFuture = ((MainActivity)getActivity()).verbList.get(mPosition).getSimpleFuture();
+            eu_simpleFuture_edit.setText(simpleFuture.Eu);
+            ele_simpleFuture_edit.setText(simpleFuture.Ele);
+            nos_simpleFuture_edit.setText(simpleFuture.Nos);
+            eles_simpleFuture_edit.setText(simpleFuture.Eles);
 
             saveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    Verb updatedVerb = new Verb(ID,title.getText().toString(),subTitle.getText().toString(),false,
+                   /* Verb updatedVerb = new Verb(ID,title.getText().toString(),subTitle.getText().toString(),false,
                             eu_present_edit.getText().toString(), ele_present_edit.getText().toString(),
                             nos_present_edit.getText().toString(),eles_present_edit.getText().toString(),
                             eu_simplePast_edit.getText().toString(),ele_simplePast_edit.getText().toString(),
@@ -214,7 +223,7 @@ public class AddIrregularInfo extends Fragment {
 
                     MainActivity.myAppDatabase.myDao().updateVerb(updatedVerb);
                     MainActivity.adapter.notifyDataSetChanged();
-                    ((MainActivity)getActivity()).updateRecyclerView();
+                    ((MainActivity)getActivity()).updateRecyclerView(); */
 
                     Toast.makeText(getActivity(), "Verb updated successfully", Toast.LENGTH_SHORT).show();
                     
@@ -226,7 +235,7 @@ public class AddIrregularInfo extends Fragment {
         }
         else //Information is being added
         {
-            title.setText(porVerb.substring(0, 1).toUpperCase() + porVerb.substring(1).toLowerCase());
+            title.setText(String.join("",porVerb.substring(0, 1).toUpperCase() , porVerb.substring(1).toLowerCase()));
             subTitle.setText(engVerb);
 
 
@@ -254,7 +263,7 @@ public class AddIrregularInfo extends Fragment {
                     }
                     else
                     {
-                        Verb newVerb = new Verb(title.getText().toString(),subTitle.getText().toString(),false,
+                        /*Verb newVerb = new Verb(title.getText().toString(),subTitle.getText().toString(),false,
                                 eu_present_edit.getText().toString(), ele_present_edit.getText().toString(),
                                 nos_present_edit.getText().toString(),eles_present_edit.getText().toString(),
                                 eu_simplePast_edit.getText().toString(),ele_simplePast_edit.getText().toString(),
@@ -276,7 +285,7 @@ public class AddIrregularInfo extends Fragment {
                         MainActivity.adapter.notifyDataSetChanged();
 
                         ((MainActivity)getActivity()).verbList = MainActivity.myAppDatabase.myDao().getVerbs();
-                        Toast.makeText(getActivity(), "Verb added successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Verb added successfully", Toast.LENGTH_SHORT).show(); */
 
                         MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).addToBackStack(null).commit();
                         MainActivity.fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);

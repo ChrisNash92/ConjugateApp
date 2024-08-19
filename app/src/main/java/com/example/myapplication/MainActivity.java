@@ -107,59 +107,52 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
 
     public void menu_onClick(MenuItem item)
     {
-        boolean checked = ((MenuItem) item).isChecked();
-
-        // Check which radio button was clicked
-        switch (item.getItemId()) {
-            case R.id.edit_menuItem:
-                if(verbList.get(mClickPosition).isProtected())
-                {
-                    Toast.makeText(this, "Cannot edit verbs in the preloaded database.", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddIrregularInfo(mClickPosition)).addToBackStack(null).commit();
-                }
-
-                    break;
-            case R.id.delete_menuItem:
-                if(verbList.get(mClickPosition).isProtected())
-                {
-                    Toast.makeText(this, "Cannot delete verbs in the preloaded database.", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            switch (which){
-                                case DialogInterface.BUTTON_POSITIVE:
-
-                                    Verb verb = new Verb(verbList.get(mClickPosition).getId());
-                                    myAppDatabase.myDao().deleteVerb(verb);
-                                    adapter.notifyDataSetChanged();
-                                    updateRecyclerView();
-
-                                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).addToBackStack(null).commit();
-                                    fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                                    break;
-
-                                case DialogInterface.BUTTON_NEGATIVE:
-                                    //No button clicked
-                                    break;
-                            }
-                        }
-                    };
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setMessage("Are you sure you want to delete this verb?").setPositiveButton("Yes", dialogClickListener)
-                            .setNegativeButton("No", dialogClickListener).show();
-                }
-                    break;
-            default:
-                break;
+        if(item.getItemId() == R.id.edit_menuItem)
+        {
+            if(verbList.get(mClickPosition).isProtected())
+            {
+                Toast.makeText(this, "Cannot edit verbs in the preloaded database.", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddIrregularInfo(mClickPosition)).addToBackStack(null).commit();
+            }
         }
+        else if(item.getItemId() == R.id.delete_menuItem)
+        {
+            if(verbList.get(mClickPosition).isProtected())
+            {
+                Toast.makeText(this, "Cannot delete verbs in the preloaded database.", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
 
+                                Verb verb = new Verb(verbList.get(mClickPosition).getId());
+                                myAppDatabase.myDao().deleteVerb(verb);
+                                adapter.notifyDataSetChanged();
+                                updateRecyclerView();
+
+                                fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).addToBackStack(null).commit();
+                                fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                                break;
+
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                //No button clicked
+                                break;
+                        }
+                    }
+                };
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("Are you sure you want to delete this verb?").setPositiveButton("Yes", dialogClickListener)
+                        .setNegativeButton("No", dialogClickListener).show();
+            }
+        }
     }
 
     public void updateRecyclerView()
